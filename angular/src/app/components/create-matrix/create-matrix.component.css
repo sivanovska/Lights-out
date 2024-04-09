@@ -23,6 +23,7 @@
     letter-spacing: 0.5px;
     font-size: 2rem;
     color: #1e3e6a;
+    margin-left: 20px;
   }
   #numButtons {
     outline: none; /* Remove default outline */

@@ -1,26 +1,23 @@
 import java.util.Scanner;
 
-public class bla {
+public class algoritam {
     private static int[][] grid;
     private static int n, m;
     private static int[][] click;
 
-    // Function to toggle the state of a cell and its neighbors
     private static void toggle(int row, int col) {
-        grid[row][col] = 1 - grid[row][col]; // Toggle the current cell
+        grid[row][col] = 1 - grid[row][col];
 
-        // Toggle the neighboring cells
         if (row > 0)
-            grid[row - 1][col] = 1 - grid[row - 1][col]; // Toggle cell above
+            grid[row - 1][col] = 1 - grid[row - 1][col];
         if (row < n - 1)
-            grid[row + 1][col] = 1 - grid[row + 1][col]; // Toggle cell below
+            grid[row + 1][col] = 1 - grid[row + 1][col];
         if (col > 0)
-            grid[row][col - 1] = 1 - grid[row][col - 1]; // Toggle cell to the left
+            grid[row][col - 1] = 1 - grid[row][col - 1];
         if (col < m - 1)
-            grid[row][col + 1] = 1 - grid[row][col + 1]; // Toggle cell to the right
+            grid[row][col + 1] = 1 - grid[row][col + 1];
     }
 
-    // Function to check if all lights are turned on
     private static boolean allLightsOn() {
         for (int i = 0; i < m; i++) {
             if (grid[m - 1][i] != 1)
@@ -29,9 +26,7 @@ public class bla {
         return true;
     }
 
-    // Backtracking function to solve the Lights Out problem
     private static boolean solveLightsOut(int row, int col) {
-        // System.out.println(row + " " + col);
         if (row == n) {
             if (allLightsOn()) {
 
@@ -73,7 +68,6 @@ public class bla {
         return solveLightsOut(nextRow, nextCol);
     }
 
-    // Main function to solve the Lights Out problem
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
@@ -86,7 +80,6 @@ public class bla {
         }
         click = new int[n][m];
 
-        // Solve the Lights Out problem starting from the top-left corner
         if (solveLightsOut(0, 0)) {
             System.out.println("Matrix is solvable.");
         } else {
@@ -97,7 +90,7 @@ public class bla {
             for (int j = 0; j < n; j++) {
                 System.out.print(click[i][j] + " ");
             }
-            System.out.println(); // Move to the next line after printing each row
+            System.out.println();
         }
     }
 }
