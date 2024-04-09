@@ -1,0 +1,23 @@
+<body>
+  <nav class="navigation">
+    <div class="logo">LIGHTS OUT</div>
+    <div class="buttons">
+      <button
+        class="shadow__btn"
+        (click)="playGame()"
+        routerLink="/play"
+        routerLinkActive="active"
+      >
+        play
+      </button>
+      <button
+        class="shadow__btn"
+        (click)="createGame()"
+        routerLink="/create"
+        routerLinkActive="active"
+      >
+        create
+      </button>
+    </div>
+  </nav>
+</body>
